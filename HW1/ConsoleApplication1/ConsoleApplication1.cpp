@@ -26,17 +26,17 @@ int main(int argc, char* argv[])
 
 	MSH* msh = new MSH(dir, subtitle, focal);
 
-	Mat image = msh->Stitching(2, 250);
+	Mat image = msh->Stitching(3, 250);
 	imwrite(exportPath, image);
 
-	image = msh->GetImageFeature(0);
+	/*image = msh->GetImageFeature(0);
 	imwrite("Tmp/Feature_0.jpg", image);
 	for (int i = 1; i < msh->images.size(); i++) {
 		image = msh->GetImageFeature(i);
 		imwrite("Tmp/Feature_" + to_string(i) + ".jpg", image);
 		image = msh->GetImageMatch(i - 1, i);
 		imwrite("Tmp/Match_" + to_string(i) + ".jpg", image);
-	}
+	}*/
 
     //imshow("Display window", image);               // Show our image inside it.
     //waitKey(0);
